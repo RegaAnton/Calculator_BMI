@@ -17,7 +17,7 @@
     }
 
     /* Style untuk tombol hitung */
-    input[type="submit"] {
+    .button {
       background-color: mediumblue;
       color: white;
       border-radius: 5px;
@@ -105,26 +105,17 @@
 <body class="bg-success">
   <div class="wrapper">
     <h3>KALKULATOR REKOMENDASI KESEHATAN</h3>
-    <form method="post" action="main.php" class="m-3">
-      <label>Jenis Kelamin :</label><br />
-      <input type="radio" name="gender" value="male" />Laki-laki <br />
-      <input type="radio" name="gender" value="female" />Perempuan<br />
-      <input type="number" name="age" placeholder="Usia(Tahun)" class="my-2" /><br />
+    <form method="post" action="{{ route('bmi') }}" class="m-3">
+      @csrf
       <input type="number" name="weight" placeholder="Berat Badan (Kg)" class="my-2" /><br />
       <input type="number" name="height" placeholder="Tinggi Badan (Cm)" class="my-2" /><br />
-      <label>Aktivitas :</label>
-      <select name="activity">
-        <option value="1.2">Sangat Sedikit (Tidak pernah berolahraga)</option>
-        <option value="1.375">Sedikit (Berolahraga 1-3 hari/minggu)</option>
-        <option value="1.55">Normal (Berolahraga 3-5 hari/minggu)</option>
-        <option value="1.725">Aktif (Berolahraga 6-7 hari/minggu)</option>
-        <option value="1.9">
-          Sangat Aktif (Olahraga berat setiap hari)
-        </option>
-      </select><br /><br />
-      <input type="submit" name="submit" value="Hitung" />
-      <input type="reset" name="submit" value="Reset" />
+      <br />
+      <br />
+      <button type="submit" class="button"> Hitung </button>
     </form>
+    @if (session()->has('suksess'))
+      <h1>{{ session('suksess') }}</h1>
+     @endif
   </div>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
 </body>

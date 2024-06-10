@@ -8,7 +8,7 @@
 
 <p align="center">Menggunakan Bootstrap 5 sebagai Frontend Dan PHP sebagai Backend</p>
 
-![App Screenshot](./Gambar%20Kalkulator%20BMI.PNG)
+![App Screenshot](./public/Gambar%20Kalkulator%20BMI.PNG)
 
 ## Introduction 🚀
 
@@ -18,16 +18,34 @@ Selamat datang di repositori GitHub untuk **Kalkulator BMI** sebuah alat web int
 
 Installing and running Sneat is super easy, please Follow below steps and you will be ready to rock 🤘
 
-- Open the terminal in your root directory.
+-   Open the terminal in your root directory.
 
-- Clone Project
+-   Clone Project
 
 ```bash
 git clone https://github.com/RegaAnton/Calculator_BMI.git
 ```
 
-- Use the following command to install the composer
+-   Move to Calculator_BMI
 
 ```bash
 cd Calculator_BMI
+```
+
+-   Use the following command to install the composer
+
+```bash
+composer install
+```
+
+-   Copy .env.example ke .env
+
+```bash
+cp .env.example .env
+```
+
+-   Start Project
+
+```bash
+php artisan serve
 ```
